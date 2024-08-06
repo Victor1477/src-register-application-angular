@@ -1,0 +1,19 @@
+<div class="form-container">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="register-application-username">Username</label>
+      <input (change)="onChange($event)" type="text" name="register-application-username" formControlName="username" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input (change)="onChange($event)" type="password" name="password" formControlName="password" />
+    </div>
+    <button type="submit">
+      @if (isLoading) {
+      <loading-spinner size="1.5rem"></loading-spinner>
+      } @else {
+      <p>Login</p>
+      }
+    </button>
+  </form>
+</div>
